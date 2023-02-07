@@ -23,6 +23,8 @@
     "git-cz": "^4.9.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.1",
+    "prettier": "^2.8.3",
+    "prettier-config-standard": "^5.0.0",
     "stylelint": "^14.16.1",
     "stylelint-config-css-modules": "^4.1.0",
     "stylelint-config-prettier": "^9.0.4",

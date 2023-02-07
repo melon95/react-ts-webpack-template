@@ -14,8 +14,10 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'react'
+    'react',
+    'prettier/recommended'
   ],
   rules: {
+    'prettier/prettier': 'error'
   }
 }
