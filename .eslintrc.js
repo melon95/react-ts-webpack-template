@@ -4,20 +4,21 @@ module.exports = {
     es2021: true
   },
   extends: [
+    'standard-with-typescript',
     'plugin:react/recommended',
-    'standard-with-typescript'
+    'plugin:react-hooks/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:prettier/recommended'
   ],
-  overrides: [
-  ],
+  overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
+    tsconfigRootDir: __dirname,
+    project: './tsconfig.json'
   },
-  plugins: [
-    'react',
-    'prettier/recommended'
-  ],
   rules: {
-    'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
+    '@typescript-eslint/no-non-null-assertion': 'off'
   }
 }

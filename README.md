@@ -40,3 +40,11 @@
 9. 配置 VSCode 和 编辑器通用配置
 10. 安装 `husky`、`lint-stage` 并配置
 11. 创建项目基本目录结构 `src`、`config`、`test`
+
+12. 配置 Webpack
+13. 配置 loader
+14. 配置 plugin
+15. 开发环境配置
+16. devServer
+17. HMR
+18. 生产环境配置
