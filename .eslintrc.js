@@ -20,5 +20,10 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
     '@typescript-eslint/no-non-null-assertion': 'off'
+  },
+  settings: {
+    react: {
+      version: 'detect' // React version. "detect" automatically picks the version you have installed.
+    }
   }
 }

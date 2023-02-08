@@ -1,13 +1,16 @@
 const path = require('path')
 // 生成html文件并引入构建后的资源
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
 // 把css提取为单独的css文件
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { isDevelopment } = require('./utils/env')
 const { PATH_OUTPUT, PATH_SRC } = require('./utils/path')
+// eslint检查
 const ESLintPlugin = require('eslint-webpack-plugin')
+// babel过程中进行ts语法检查
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+// 打包进度条
+const WebpackBar = require('webpackbar')
 
 const cssLoaders = [
   {
@@ -31,7 +34,7 @@ const cssLoaders = [
 module.exports = {
   entry: `${PATH_SRC}/index.tsx`,
   output: {
-    filename: 'js/[name]-[hash:8].js',
+    filename: 'js/[name]-[contenthash:8].js',
     path: PATH_OUTPUT,
     clean: true
   },
@@ -86,16 +89,7 @@ module.exports = {
       template: path.join(__dirname, '../public/index.html'),
       inject: true
     }),
-    new webpack.ProgressPlugin({
-      activeModules: false,
-      entries: true,
-      modules: true,
-      modulesCount: 5000,
-      profile: false,
-      dependencies: true,
-      dependenciesCount: 10000,
-      percentBy: null
-    }),
+    new WebpackBar(),
     new ESLintPlugin({
       extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
       context: PATH_SRC
