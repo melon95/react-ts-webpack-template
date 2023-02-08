@@ -4,7 +4,7 @@ function App(): ReactElement {
   return (
     <div className={styles.app}>
       <h1>It is a custom react project</h1>
-      <p>Welcome to use this template</p>
+      <p className="p-2">Welcome to use this template</p>
     </div>
   )
 }

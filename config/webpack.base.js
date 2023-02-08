@@ -12,6 +12,8 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 // 打包进度条
 const WebpackBar = require('webpackbar')
 
+const WindiCSSWebpackPlugin = require('windicss-webpack-plugin')
+
 const cssLoaders = [
   {
     loader: isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader
@@ -96,6 +98,13 @@ module.exports = {
     }),
     new ForkTsCheckerWebpackPlugin({
       async: false
+    }),
+    new WindiCSSWebpackPlugin({
+      virtualModulePath: 'src',
+      server: {
+        port: 9999,
+        host: 'localhost'
+      }
     })
   ],
   cache: {

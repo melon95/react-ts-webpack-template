@@ -11,9 +11,6 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // 压缩css文件
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-// 删除没有使用到的css
-const { PurgeCSSPlugin } = require('purgecss-webpack-plugin')
-const glob = require('glob')
 
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
 
@@ -102,11 +99,6 @@ const prodConfig = {
         }
       }
     })
-    // new PurgeCSSPlugin({
-    //   paths: glob.sync(`${PATH_SRC}/**/*`, {
-    //     nodir: true
-    //   })
-    // })
   ]
 }
 module.exports = merge(baseConfig, prodConfig)

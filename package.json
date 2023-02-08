@@ -42,7 +42,6 @@
     "eslint-webpack-plugin": "^4.0.0",
     "fork-ts-checker-webpack-plugin": "^7.3.0",
     "git-cz": "^4.9.0",
-    "glob": "^8.1.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.1",
@@ -50,7 +49,6 @@
     "postcss-loader": "^7.0.2",
     "prettier": "^2.8.3",
     "prettier-config-standard": "^5.0.0",
-    "purgecss-webpack-plugin": "^5.0.0",
     "react-refresh": "^0.14.0",
     "sass": "^1.58.0",
     "sass-loader": "^13.2.0",
@@ -66,7 +64,9 @@
     "webpack-dev-server": "^4.11.1",
     "webpack-manifest-plugin": "^5.0.0",
     "webpack-merge": "^5.8.0",
-    "webpackbar": "^5.0.2"
+    "webpackbar": "^5.0.2",
+    "windicss": "^3.5.6",
+    "windicss-webpack-plugin": "^1.7.7"
   },
   "dependencies": {
     "react": "^18.2.0",
