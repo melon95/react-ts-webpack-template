@@ -13,12 +13,12 @@
 
 - React
 - React-Dom
-- babel
+- Babel
 - TypeScript
 - Webpack
 - Webpack-cli
-- sass
-- uncocss
+- Sass
+- Windicss
 
 2. 代码风格相关
 
