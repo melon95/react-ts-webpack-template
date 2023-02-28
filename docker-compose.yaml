@@ -1,0 +1,7 @@
+version: '2'
+services:
+  latest:
+    container_name: react-ts-template
+    image: react-ts-template:latest
+    ports:
+      - '4004:3000'

@@ -48,3 +48,20 @@
 16. devServer
 17. HMR
 18. 生产环境配置
+
+## 部署
+
+1. 通过 `pnpm build` 进行构建
+2. 通过 `docker build -t react-ts-template:latest .` 构建镜像
+3. 通过 `docker-compose up -d` 来启动容器
+
+## TODO
+
+- [x] 设置目标浏览器版本
+- [x] 环境变量的配置
+- [x] docker 构建和部署
+- [ ] 主题切换
+- [ ] 国际化支持
+- [ ] 路由
+- [ ] 状态管理
+- [ ] mock
