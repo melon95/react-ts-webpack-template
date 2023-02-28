@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const baseConfig = require('./webpack.base')
 const { PATH_PUBLIC } = require('./utils/path')
 const { PORT } = require('./utils/env')
+
 // React组件热更新
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
@@ -19,12 +20,10 @@ const devConfig = {
     compress: true,
     port: PORT,
     hot: true,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    open: true
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.API_URL': '"dev"'
-    }),
     new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin()
   ]

@@ -1,9 +1,10 @@
 const path = require('path')
+const webpack = require('webpack')
 // 生成html文件并引入构建后的资源
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // 把css提取为单独的css文件
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { isDevelopment } = require('./utils/env')
+const { isDevelopment, parseEnvFile } = require('./utils/env')
 const { PATH_OUTPUT, PATH_SRC } = require('./utils/path')
 // eslint检查
 const ESLintPlugin = require('eslint-webpack-plugin')
@@ -30,6 +31,8 @@ const cssLoaders = [
     }
   }
 ]
+
+const envVariableObj = parseEnvFile(process.env.NODE_ENV)
 /**
  * @type {import('webpack').Configuration}
  */
@@ -105,7 +108,8 @@ module.exports = {
         port: 9999,
         host: 'localhost'
       }
-    })
+    }),
+    envVariableObj && new webpack.DefinePlugin(envVariableObj)
   ],
   cache: {
     type: 'filesystem' // 使用文件缓存

@@ -1,5 +1,4 @@
 const { merge } = require('webpack-merge')
-const webpack = require('webpack')
 const baseConfig = require('./webpack.base')
 const { PATH_PUBLIC } = require('./utils/path')
 
@@ -58,9 +57,6 @@ const prodConfig = {
     }
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.API_URL': '"production"'
-    }),
     new CopyPlugin({
       patterns: [
         {
