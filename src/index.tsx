@@ -1,4 +1,5 @@
 import { createRoot } from 'react-dom/client'
+import './locales'
 import Router from './routers'
 import './virtual:windi.css'
 

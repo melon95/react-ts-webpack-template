@@ -116,6 +116,8 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
     // 配置别名
-    alias: {}
+    alias: {
+      '@locales': path.join(PATH_SRC, 'locales/hooks')
+    }
   }
 }
