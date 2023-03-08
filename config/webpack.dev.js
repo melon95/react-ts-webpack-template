@@ -21,7 +21,8 @@ const devConfig = {
     port: PORT,
     hot: true,
     host: '0.0.0.0',
-    open: true
+    open: true,
+    historyApiFallback: true
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
