@@ -117,7 +117,10 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
     // 配置别名
     alias: {
-      '@locales': path.join(PATH_SRC, 'locales/hooks')
+      '@locales': path.join(PATH_SRC, 'locales/hooks'),
+      '@utils': path.join(PATH_SRC, 'utils'),
+      '@stores': path.join(PATH_SRC, 'stores'),
+      '@src': path.join(PATH_SRC, '')
     }
   }
 }

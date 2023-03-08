@@ -1,0 +1,9 @@
+.root {
+  grid-template-columns: 200px 1fr;
+  min-height: 100%;
+}
+
+.container {
+  grid-template-columns: 1fr;
+  grid-template-rows: 64px minmax(calc(100% - 128px - 4rem), auto) 64px;
+}

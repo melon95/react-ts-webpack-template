@@ -2,8 +2,9 @@ import AppRoutePath from '@src/routers/const'
 import { type RouteObject } from 'react-router-dom'
 import Component from './index'
 
-const Router: RouteObject = {
+const Route: RouteObject = {
   element: <Component />,
-  path: AppRoutePath.HomeRoutePath
+  path: AppRoutePath.LoginRoutePath
 }
-export default Router
+
+export default Route

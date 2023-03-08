@@ -1,11 +1,12 @@
-import { Link } from 'react-router-dom'
-const List: React.FC = () => {
+import { TemplateComponent } from '@src/components'
+
+const Component: React.FC = () => {
   return (
     <div>
       <p>I am List</p>
-      <Link to="/">To Home</Link>
+      <TemplateComponent />
     </div>
   )
 }
 
-export default List
+export default Component
