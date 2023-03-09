@@ -11,20 +11,20 @@ const themeAlgorithm = {
 
 const StorageKey = 'themeAlgorithm'
 
-type IAlgorithmKey = keyof typeof themeAlgorithm
-type IAlgorithm = typeof defaultAlgorithm | typeof darkAlgorithm
+type IThemeAlgorithmKey = keyof typeof themeAlgorithm
+type IThemeAlgorithm = typeof defaultAlgorithm | typeof darkAlgorithm
 
-const getThemeAlgorithm = (): IAlgorithm =>
+const getThemeAlgorithm = (): IThemeAlgorithm =>
   themeAlgorithm[
-    (getStorage(StorageKey) as IAlgorithmKey) ?? 'defaultAlgorithm'
+    (getStorage(StorageKey) as IThemeAlgorithmKey) ?? 'defaultAlgorithm'
   ]
 
-const setThemeAlgorithm = (val: IAlgorithmKey): void => {
+const setThemeAlgorithm = (val: IThemeAlgorithmKey): void => {
   setStorage(StorageKey, val)
 }
 
 interface IThemeStore {
-  algorithm: IAlgorithm
+  algorithm: IThemeAlgorithm
   isLight: () => boolean
   setAlgorithm: () => void
 }
@@ -37,13 +37,13 @@ export const useThemeStore = create<IThemeStore>((set, get) => ({
   setAlgorithm: () => {
     const { algorithm } = get()
 
-    const nextThemeAlgorithm: IAlgorithm =
+    const nextThemeAlgorithm: IThemeAlgorithm =
       algorithm === defaultAlgorithm ? darkAlgorithm : defaultAlgorithm
     set({
       algorithm: nextThemeAlgorithm
     })
 
-    const nextThemeAlgorithmKey: IAlgorithmKey =
+    const nextThemeAlgorithmKey: IThemeAlgorithmKey =
       algorithm === defaultAlgorithm ? 'darkAlgorithm' : 'defaultAlgorithm'
     setThemeAlgorithm(nextThemeAlgorithmKey)
   }
