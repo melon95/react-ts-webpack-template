@@ -10,19 +10,20 @@ export const setLng = (val: ILng): void => {
 
 interface ILocaleState {
   lng: ILng
-  setLng: (val: ILng) => void
-  showLng: () => ILng
+  setLng: (val: Uppercase<ILng>) => void
+  showLng: () => Uppercase<ILng>
 }
 
 export const useLocaleStore = create<ILocaleState>((set, get) => ({
   lng: getLng(),
   setLng: (lng) => {
-    set({ lng })
-    setLng(lng)
+    const val = lng.toLowerCase() as ILng
+    set({ lng: val })
+    setLng(val)
     void i18n.changeLanguage(lng)
   },
-  showLng: (): ILng => {
+  showLng: (): Uppercase<ILng> => {
     const lng = get().lng
-    return lng === 'en' ? 'zh' : 'en'
+    return lng === 'en' ? 'ZH' : 'EN'
   }
 }))

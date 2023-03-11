@@ -43,7 +43,14 @@ const Component: React.FC = () => {
     )
   }, [pathname])
 
-  return <Menu selectedKeys={keys} mode="inline" items={items} />
+  return (
+    <Menu
+      className="border-r-0"
+      selectedKeys={keys}
+      mode="inline"
+      items={items}
+    />
+  )
 }
 
 export default Component

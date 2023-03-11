@@ -2,7 +2,9 @@ import { getStorage, setStorage } from '@utils/storage'
 import { theme } from 'antd'
 import { create } from 'zustand'
 
-const { defaultAlgorithm, darkAlgorithm } = theme
+const { defaultAlgorithm, darkAlgorithm, defaultSeed } = theme
+
+console.log(defaultAlgorithm(defaultSeed))
 
 const themeAlgorithm = {
   defaultAlgorithm,
